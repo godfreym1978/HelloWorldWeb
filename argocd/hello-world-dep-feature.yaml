@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-java-app
+  namespace: development
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-java-app
+  template:
+    metadata:
+      labels:
+        app: simple-java-app
+    spec:
+      containers:
+      - name: simple-java-app
+        image: gmenezes/gpmrepo:{{GIT_COMMIT}}
+        ports:
+        - containerPort: 8080
