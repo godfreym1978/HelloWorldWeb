@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: simple-java-app
-        image: gmenezes/gpmrepo:{{GIT_COMMIT}}
+        image: gmenezes/gpmrepo:latest
         ports:
         - containerPort: 8080
